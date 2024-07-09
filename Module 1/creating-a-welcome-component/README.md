@@ -1,0 +1,2 @@
+# Project Description
+This is a continuation of the 'first-react-native-component' project, but where you learn the purpose of the <View> and <Text> components and how to style it to format the app better.
