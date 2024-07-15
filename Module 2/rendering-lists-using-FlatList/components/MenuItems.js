@@ -26,26 +26,29 @@ const menuItemsToDisplay = [
 ];
 
 
+const header = () => <Text style={styles.headerText}>Menu</Text>
+
+
+const renderItem = ({ item }) => {
+    return (
+        <View style={styles.itemContainer}>
+            <Text style={styles.itemName}>{item.name}</Text>
+            <Text style={styles.itemPrice}>{item.price}</Text>
+        </View>
+    );
+} 
 
 export default function MenuItems() {
-    const renderItem = ({ item }) => {
-        return (
-            <View style={styles.itemContainer}>
-                <Text style={styles.itemName}>{item.name}</Text>
-                <Text style={styles.itemPrice}>{item.price}</Text>
-            </View>
-        );
-    }
+    
 
     return (
         <View style={styles.container}>
-            <Text style={styles.headerText}>Menu</Text>
-
             <FlatList 
                 data={menuItemsToDisplay}
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}
+                ListHeaderComponent={header}
             />
         </View>
     );
